@@ -52,7 +52,8 @@
 			ul#user_meta a:hover,
 			nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
 		</style>
-		
+		<script type="text/javascript" src="//use.typekit.net/apy5owh.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<?php wp_head();  ?>
 
 		
