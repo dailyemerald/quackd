@@ -20,7 +20,9 @@
 
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
-
+			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+  				the_post_thumbnail('thumb-800px');
+			}?>
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">

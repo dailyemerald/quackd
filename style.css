@@ -395,7 +395,7 @@ article object {
     display: block;
     margin: 0;
     padding: 0;
-    max-width: 657px;
+    max-width: 800px;
     float: none;
 }
 article iframe,
@@ -1017,6 +1017,11 @@ td {
     #svbtle_linkback {
         top: 700px;
         position: absolute;
+    }
+}
+@media all and (max-width:1000px) { 
+	article img, article iframe, article object {
+    	max-width: 100%;
     }
 }
 @media all and (max-width:630px) { 

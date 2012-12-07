@@ -1,11 +1,25 @@
 <?php
 
+add_theme_support('post-thumbnails'); 
+add_image_size('thumb-800px', 800, 800);
+add_image_size('square-thumb', 150, 150, true);
+
 add_action( 'after_setup_theme', 'theme_setup' );
 add_action( 'init', 'widgets_init' );
 add_action('admin_head', 'load_theme_scripts');
 add_action('init', 'register_custom_menu');
 add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
+
+// http://benfrain.com/wordpress-responsive-images-how-to-strip-inline-width-and-height-attributes/
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 ); 
+add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 ); 
+function remove_thumbnail_dimensions( $html ) { 
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html ); 
+	return $html; 
+}
+
+
 
 // Coming...
 // include('vendor/UCF-Theme-Updater/updater.php');
