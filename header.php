@@ -108,11 +108,6 @@
 				<?php if ( is_active_sidebar( 'sidebar' ) ) dynamic_sidebar( 'sidebar' ); ?>
 
 		  </ul>
-		  <aside id="svbtle_linkback">
-		    <a href="https://github.com/gravityonmars/wp-svbtle">
-		      <span class="logo_square"><span class="logo_circle">&nbsp;</span></span>&nbsp;<span class="svbtle">wp-svbtle</span>
-		    </a>
-		  </aside>
 		</header>
 		
 		<section id="river" role="main">
