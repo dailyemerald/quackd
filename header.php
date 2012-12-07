@@ -26,11 +26,31 @@
 			if( isset( $options['color'] ) && '' != $options['color'] )
 				$color = $options['color'];
 			else 
-				$color = "#ff0000";
+				$color = "#b2d234";
 	
 		?>
 
-		<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
+		<style>
+			blockquote {
+				border-color: <?php echo $color ?>;
+			}
+			/*aside#logo,
+			aside#logo div a,*/
+			ul#user_meta a:hover span.link_logo_inside,
+			ul#user_meta a:hover span.link_logo,
+			aside.kudo.complete span.circle {
+				background-color: <?php echo $color ?>;
+			}
+
+			section.preview header#begin h2,
+			ul#user_meta a:hover,
+			nav.pagination span.next a,
+			nav.pagination span.prev a {
+				color: <?php echo $color ?>;
+			}
+
+			ul#user_meta a:hover,
+			nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
 		</style>
 		
 		<?php wp_head();  ?>

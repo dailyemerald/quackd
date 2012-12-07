@@ -254,12 +254,12 @@ function widgets_init() {
 
 function theme_header_style() {
     ?><style type="text/css">
-aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}
+	/* aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);} */
     </style><?php
 }
 function theme_admin_header_style() {
     ?><style type="text/css">
-		aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}
+		/* aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}*/
     </style><?php
 }
 function theme_admin_header_image() {
