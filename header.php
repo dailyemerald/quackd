@@ -59,6 +59,17 @@
 		
 	</head>
 	<body <?php body_class(); ?>>
+
+
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 		<header id="sidebar">
 		  <aside id="logo" class="clearfix">
 		    <div class="clearfix">
@@ -124,8 +135,13 @@
 					<li class="link feed">
 				      <a href="<?php bloginfo('rss_url'); ?>">feed</a>
 				    </li>		
-				<?php endif ?>		
-		
+				<?php endif ?>	
+
+					<li class="link">
+					  <a href="#">
+				      <div class="fb-like" data-href="http://facebook.com/quackdcom" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+				  	 </a>
+				    </li>
 				<?php if ( is_active_sidebar( 'sidebar' ) ) dynamic_sidebar( 'sidebar' ); ?>
 
 		  </ul>
