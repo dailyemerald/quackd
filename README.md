@@ -1,4 +1,4 @@
 quackd
 ======
 
-The theme for quackd.com
+The WordPress theme for quackd.com. In progress.
