@@ -20,6 +20,11 @@
 
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
+			<div class="author-meta" style="margin-bottom:20px;">
+			<p>By <?php the_author(); ?></p>
+			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+			</div>
+
 			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
   				the_post_thumbnail('thumb-600px');
 			}?>
