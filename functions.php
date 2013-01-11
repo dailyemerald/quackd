@@ -2,7 +2,9 @@
 
 add_theme_support('post-thumbnails'); 
 add_image_size('thumb-600px', 600, 600);
-add_image_size('square-thumb', 150, 150, true);
+add_image_size('150px-square-thumbnail', 150, 150, true);
+add_image_size('homepage-thumbnail', 800, 300, true); //300 pixels wide (and unlimited height)
+add_image_size('single-thumbnail', 800, 800, true);
 
 add_action( 'after_setup_theme', 'theme_setup' );
 add_action( 'init', 'widgets_init' );
@@ -286,8 +288,6 @@ function register_custom_menu() {
 }
 
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
-
-
 
 
 function load_theme_scripts() {

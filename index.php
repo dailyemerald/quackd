@@ -9,7 +9,9 @@ get_header();
 </div><!-- .entry-meta -->
 
 <header id="begin">
-	<time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php echo date('F d, Y'); ?></time>
+	<?php if (is_home()) { ?>
+		<time id="top_time">Our newest essays</time>
+	<?php } ?>
 </header>
 
 <?php

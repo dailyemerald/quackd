@@ -13,6 +13,14 @@
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php $options = get_option ( 'svbtle_options' ); ?>
 
+	<?php 
+		$post_author_from_custom_field = "Quackd"; // set default value
+		foreach(get_post_custom_values("author") as $_author) {
+			$post_author_from_custom_field = $_author;
+		}
+	?>
+
+
 	<?php $kudos = get_post_meta($post->ID, '_wp-svbtle-kudos', true); 
 				if ($kudos > "") { $kudos = $kudos; } else { $kudos = "0"; } ?>
 				
@@ -21,28 +29,48 @@
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
 			<div class="author-meta" style="margin-bottom:20px;">
-			<p>By <?php the_author(); ?></p>
-			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				<div class="meta-element byline">
+					<p>By <?php echo $post_author_from_custom_field ?> &bull; <?php the_time('F d, Y'); ?></p>
+				</div>
+				<div class="meta-element like-button">
+					<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</div>
+				<div class="meta-element tweet-button">
+					<a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="quackdcom" data-text="<?php the_title(); ?>">Tweet</a>
+				</div>
+				<div style="clear: both;"></div>
 			</div>
 
-			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  				the_post_thumbnail('thumb-600px');
-			}?>
-
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
+			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+  				the_post_thumbnail('homepage-thumbnail');	
+  				echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
+			}?>
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
 	<?php else : ?>
+			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+  				the_post_thumbnail('single-thumbnail');	
+  				echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
+			}?>
 			<div class="entry-content">
 				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'boilerplate' ) ); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'boilerplate' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
+		<?php
+			$tags = get_tags();
+			$html = '<p class="post_tags">';
+			foreach ($tags as $tag) { 
+				$tag_link = get_tag_link($tag->term_id);	
+				$html .= "<a href='{$tag_link}' title='{$tag->name} tag' class='{$tag->slug} tag'>{$tag->name}</a> ";
+			}
+			$html .= '</p>';
+			echo $html;
+		?>
 
-			
-			
 			<aside class="kudo kudoable" id="<?php the_ID(); ?>">
 				<a href="?" class="kudobject">
 					<div class="opening clearfix">

@@ -1,5 +1,7 @@
 </section><!-- #main -->
 
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
 <?php $options = get_option ( 'svbtle_options' ); ?>
 
 <script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
