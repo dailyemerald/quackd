@@ -1919,7 +1919,8 @@ span.caption {
     display: block;
     text-transform: uppercase;
     color: #888;
-    font-size: 12px;
+    margin-top: 3px;
+    font-size: 10px;
     max-width: 800px;
 }
 a.tag {
