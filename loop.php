@@ -44,9 +44,7 @@
 			</div><!-- .entry-summary -->
 	<?php else : ?>
 			<?php if ( has_post_thumbnail() ) { ?> 
-				<a href="<?php the_permalink(); ?>">
-  					<?php the_post_thumbnail('single-thumbnail');	?>
-  				</a>
+				<?php the_post_thumbnail('single-thumbnail');	?>
   				<?php echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
 			}?>
 			<div class="entry-content">
