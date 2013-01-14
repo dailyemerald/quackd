@@ -60,16 +60,7 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-		<?php
-			$tags = get_tags();
-			$html = '<p class="post_tags">';
-			foreach ($tags as $tag) { 
-				$tag_link = get_tag_link($tag->term_id);	
-				$html .= "<a href='{$tag_link}' title='{$tag->name} tag' class='{$tag->slug} tag'>{$tag->name}</a> ";
-			}
-			$html .= '</p>';
-			echo $html;
-		?>
+		<?php the_tags('', ', '); ?>
 
 			<aside class="kudo kudoable" id="<?php the_ID(); ?>">
 				<a href="?" class="kudobject">
