@@ -63,7 +63,9 @@
 			<div class="clearfix" style="margin-bottom:20px;"></div>
 			<?php } ?>
 
-		<?php the_tags('', ', '); ?>
+			<div class="tag-list">
+				<?php the_tags('', ', '); ?>
+			</div>
 
 			<aside class="kudo kudoable" id="<?php the_ID(); ?>">
 				<a href="?" class="kudobject">
