@@ -53,6 +53,7 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
+			<?php if (is_single()) { ?>
 			<div class="meta-element like-button">
 				<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 			</div>
@@ -60,6 +61,7 @@
 				<a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="quackdcom" data-text="<?php the_title(); ?>">Tweet</a>				</div>
 			</div>
 			<div class="clearfix" style="margin-bottom:20px;"></div>
+			<?php } ?>
 
 		<?php the_tags('', ', '); ?>
 
