@@ -33,17 +33,21 @@
 			</div>
 
 	<?php if ( is_home() || is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
-			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  				the_post_thumbnail('homepage-thumbnail');	
-  				echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
+			<?php if ( has_post_thumbnail() ) { ?> 
+				<a href="<?php the_permalink(); ?>">
+  					<?php the_post_thumbnail('homepage-thumbnail');	?>
+  				</a>
+  				<?php echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
 			}?>
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
 	<?php else : ?>
-			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  				the_post_thumbnail('single-thumbnail');	
-  				echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
+			<?php if ( has_post_thumbnail() ) { ?> 
+				<a href="<?php the_permalink(); ?>">
+  					<?php the_post_thumbnail('single-thumbnail');	?>
+  				</a>
+  				<?php echo '<span class="caption">' . get_post( get_post_thumbnail_id() )->post_excerpt . '</span>';
 			}?>
 			<div class="entry-content">
 				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'boilerplate' ) ); ?>
