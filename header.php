@@ -30,6 +30,8 @@
 	
 		?>
 
+		<?php emg_head_fb_open_graph(); ?>
+
 		<style>
 			blockquote {
 				border-color: <?php echo $color ?>;
