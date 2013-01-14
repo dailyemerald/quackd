@@ -29,9 +29,7 @@
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
 			<div class="author-meta" style="margin-bottom:20px;">
-				<div class="meta-element byline">
 					<p>By <?php echo $post_author_from_custom_field ?> &bull; <?php the_time('F d, Y'); ?></p>
-				</div>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
