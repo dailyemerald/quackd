@@ -32,13 +32,6 @@
 				<div class="meta-element byline">
 					<p>By <?php echo $post_author_from_custom_field ?> &bull; <?php the_time('F d, Y'); ?></p>
 				</div>
-				<div class="meta-element like-button">
-					<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-				</div>
-				<div class="meta-element tweet-button">
-					<a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="quackdcom" data-text="<?php the_title(); ?>">Tweet</a>
-				</div>
-				<div style="clear: both;"></div>
 			</div>
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
@@ -59,6 +52,14 @@
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'boilerplate' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>
+
+			<div class="meta-element like-button">
+				<div class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+			</div>
+			<div class="meta-element tweet-button">
+				<a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-via="quackdcom" data-text="<?php the_title(); ?>">Tweet</a>				</div>
+			</div>
+			<div class="clearfix" style="margin-bottom:20px;"></div>
 
 		<?php the_tags('', ', '); ?>
 
