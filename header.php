@@ -141,7 +141,7 @@
 
 					<li class="link">
 					  <a href="#">
-				      <div class="fb-like" data-href="http://facebook.com/quackdcom" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+				      <div class="fb-like" data-href="http://facebook.com/quackdcom" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
 				  	 </a>
 				    </li>
 				<?php if ( is_active_sidebar( 'sidebar' ) ) dynamic_sidebar( 'sidebar' ); ?>
